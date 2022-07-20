@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Home = () => {
   return (
     <div>landing page</div>
@@ -7,3 +8,4 @@ const Home = () => {
 }
 
 export default Home
+
