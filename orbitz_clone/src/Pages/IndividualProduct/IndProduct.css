@@ -1,0 +1,54 @@
+#ProductParent{
+    background-color: #f4f2f2;
+}
+
+#ProductParent > div{
+    background-color: white;
+}
+
+#indProductImg {
+	width: 80%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	gap: 3px;
+}
+
+#indProductImg img {
+	width: 100%;
+	aspect-ratio: 16/9;
+}
+
+.childhotelImg {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 3px 3px;
+}
+
+.childhotelImg img {
+	width: 90%;
+	margin-top: -1px;
+}
+
+.productTabs:hover {
+	cursor: pointer;
+	border-bottom: 2px solid #6b646b;
+}
+
+
+#HotelDetails{
+    display:grid;
+    width:80%;
+    margin: auto;
+    padding:30px;
+    grid-template-columns: 65% 35%;
+}
+
+
+#VipCard{
+    display: grid;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    grid-template-columns: repeat(3,1fr);
+}
