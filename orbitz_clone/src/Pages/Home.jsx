@@ -1,8 +1,9 @@
 import React from 'react'
+import { Homepage } from '../Components/HomePage/Homepage'
 
 const Home = () => {
   return (
-    <div>landing page</div>
+    <div><Homepage/></div>
   )
 }
 
