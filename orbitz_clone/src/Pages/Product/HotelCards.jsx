@@ -1,23 +1,30 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import axios from "axios"
 
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 const HotelCards = () => {
-  const[data,setdata]=useState([])
-  
-  useEffect(()=>{
-  
-    const getdata=async()=>{
-      let r=await axios.get(`https://orbitz-heroku-data.herokuapp.com/hotels`);
-      console.log(r.data);
-      setdata(r.data)
-    }
-
-    getdata()
-  },[page])
+  const products=useSelector((state)=>state);
+      const fetchproducts=async()=> {
+      const response = await axios
+      .get("https://orbitz-heroku-data.herokuapp.com/hotels")
+      .catch((err)=> {
+        console.log("Err",err);
+      })
+      console.log(response.data)
+    };
+    useEffect(()=>{
+     fetchproducts()
+    },[])
+     console.log("Products:",products)
   return (
     <div>
-
+  <div className="cards">
+      <div className="image"></div>
+      <div className="content">
+        <div className="header"></div>
+      </div>
+      
+  </div>
     </div>
   )
 }
