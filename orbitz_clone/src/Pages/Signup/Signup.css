@@ -1,0 +1,15 @@
+span{
+    color: rgb(63, 144, 149);
+}
+input{
+    border: 1px solid black;
+}
+
+#signupCont{
+    width: 500px;
+    margin: auto;
+    border: 1px solid red;
+}
+#signupBtn{
+    background-color: blue;
+}
