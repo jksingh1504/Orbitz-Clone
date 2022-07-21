@@ -53,52 +53,53 @@ export const Signup = () => {
   }
   return (
     <div id="signupCont">
-      <p>Create an account</p>
+      <p id="titleSignup">Create an account</p>
       <form onSubmit={handleSubmit}>
         
-        <div>
+        <div id="signupForm">
           <input type="text"
             name="Email address"
-            placeholder="Email"
-            value={formValues.email}
+            placeholder="Email Address"
+            
             onChange={handleChange} />
-          <p>{formErrors.email}</p>
+          <p className="errText">{formErrors.email}</p>
 
           <input type="text"
             name="First Name"
             placeholder="First Name"
             value={formValues.firstname}
             onChange={handleChange} />
-          <p>{formErrors.firstname}</p>
+          <p className="errText">{formErrors.firstname}</p>
 
           <input type="text"
             name="Email address"
             placeholder="Last Name"
             value={formValues.lastname}
             onChange={handleChange} />
-          <p>{formErrors.lastname}</p>
+          <p className="errText">{formErrors.lastname}</p>
 
-          <input type="text"
+          <input type="password"
             name="password"
             placeholder="Password"
             value={formValues.password}
             onChange={handleChange} />
-          <p>{formErrors.password}</p>
+          <p className="errText">{formErrors.password}</p>
         </div>
         <br />
+        <div id="rememberMe">
+          <input id="checkbox" type="checkbox" />
+          <p id="keepMe">Keep me signed in</p>
+        </div>
         <div>
-          <input type="checkbox" />
-          <p>Keep me signed in</p>
-        </div>
-        <p>Selecting this checkbox will keep you signed into your account on this device until you sign out.
+        <p id="checkboxText">Selecting this checkbox will keep you signed into your account on this device until you sign out.
           Do not select this on shared devices.</p>
-        <br />
-        <br />
-        <p> By creating an account, I agree to the Orbitz <span><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
+        </div>
+       <div>
+       <p id="agreeText"> By creating an account, I agree to the Orbitz <span><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
         <button id="signupBtn">Continue</button>
+       </div>
       </form>
-      <p>Already have an account? <span><Link to="/login">Sign in</Link></span></p>
-      <p>or continue with</p>
+      <div id="AlreadyAcc"><p>Already have an account? <span><Link to="/login">Sign in</Link></span></p></div>
       <div>
         <div></div>
         <div></div>
