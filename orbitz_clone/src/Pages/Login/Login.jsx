@@ -1,6 +1,6 @@
-import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
+import "./Login.css"
 
 export const Login = () => {
     const initialState = { email: "", password: "" };
@@ -46,26 +46,46 @@ export const Login = () => {
       return errors
     }
     return (
+      <div id="signupCont">
+      <p id="titleSignup">Sign in</p>
+      <form onSubmit={handleSubmit}>
+        
+        <div id="signupForm">
+          <input type="text"
+            name="Email address"
+            placeholder="Email Address"
+            
+            onChange={handleChange} />
+          <p className="errText">{formErrors.email}</p>
+
+          <input type="password"
+            name="password"
+            placeholder="Password"
+            value={formValues.password}
+            onChange={handleChange} />
+          <p className="errText">{formErrors.password}</p>
+        </div>
+        <br />
+        <div id="rememberMe">
+          <input id="checkbox" type="checkbox" />
+          <p id="keepMe">Keep me signed in</p>
+        </div>
+        <div>
+        <p id="checkboxText">Selecting this checkbox will keep you signed into your account on this device until you sign out.
+          Do not select this on shared devices.</p>
+        </div>
+       <div>
+       <p id="agreeText"> By creating an account, I agree to the Orbitz <span><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
+        <button id="signupBtn">Log in</button>
+       </div>
+      </form>
+      <div id="forgot"><span><Link to="/">Forgot password</Link></span></div>
+      <div id="AlreadyAcc"><p>Don't have an account ?<span><Link to="/login">Create one</Link></span></p></div>
       <div>
-        <Box>
-          <form  onSubmit={handleSubmit}>
-            <Heading>Sign in</Heading>
-                 <Input type="text"
-                 name="Email address"
-                 placeholder="Email"
-                 value={formValues.email}
-                 onChange={handleChange}/>
-                 <Text>{formErrors.email}</Text>
-                 <Input type="text"
-                 name="password"
-                 placeholder="Password"
-                 value={formValues.password}
-                 onChange={handleChange}/>
-                 <Text>{formErrors.password}</Text>
-                 <Button>Sign in</Button>
-          </form>
-        </Box>
+        <div></div>
+        <div></div>
       </div>
+    </div>
     );
 }
 

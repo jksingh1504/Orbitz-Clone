@@ -6,6 +6,7 @@ input{
     width: 400px;
     height: 50px;
     padding-left: 50px;
+    border-radius: 2px;
 }
 
 input::placeholder{
@@ -19,7 +20,6 @@ input::placeholder{
 }
 #signupCont{
     width: 400px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     gap: 15px;
