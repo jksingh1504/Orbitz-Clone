@@ -3,6 +3,7 @@ import "./IndProduct.css";
 import { Tabs, TabList, Tab } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import HotelDetails from "./components/HotelDetails";
+import HotelParent from "./components/HotelParent";
 
 const IndiProduct = () => {
 	return (
@@ -80,6 +81,8 @@ const IndiProduct = () => {
 				</TabList>
 			</Tabs>
 			<HotelDetails />
+			<br />
+			<HotelParent/>
 		</div>
 	);
 };
