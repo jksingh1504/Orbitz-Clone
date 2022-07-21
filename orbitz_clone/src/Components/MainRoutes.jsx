@@ -10,6 +10,7 @@ const MainRoutes = () => {
     <Routes>
         <Route path="/" element={<IndiProduct/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/signup" element={<Signup/>}/>
     </Routes>
   )
 }

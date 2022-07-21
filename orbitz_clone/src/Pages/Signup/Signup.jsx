@@ -2,7 +2,7 @@ import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 
-export const Login = () => {
+export const Signup = () => {
     const initialState = { email: "", password: "" };
     const [formValues, setFormvalues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
@@ -37,6 +37,12 @@ export const Login = () => {
       if(!values.password){
         errors.password = "Enter a password"
       }
+      if(!values.firstname){
+        errors.firstname = "Enter a First Name"
+      }
+      if(!values.lastname){
+        errors.lastname = "Enter a Last Name"
+      }
       else if(values.password.length < 4){
         errors.password = "password must be more than 4 charcters"
       }
@@ -56,13 +62,29 @@ export const Login = () => {
                  value={formValues.email}
                  onChange={handleChange}/>
                  <Text>{formErrors.email}</Text>
+
+                 <Input type="text"
+                 name="First Name"
+                 placeholder="First Name"
+                 value={formValues.firstname}
+                 onChange={handleChange}/>
+                 <Text>{formErrors.firstname}</Text>
+
+                 <Input type="text"
+                 name="Email address"
+                 placeholder="Last Name"
+                 value={formValues.lastname}
+                 onChange={handleChange}/>
+                 <Text>{formErrors.lastname}</Text>
+
                  <Input type="text"
                  name="password"
                  placeholder="Password"
                  value={formValues.password}
                  onChange={handleChange}/>
                  <Text>{formErrors.password}</Text>
-                 <Button>Sign in</Button>
+
+                 <Button>Continue</Button>
           </form>
         </Box>
       </div>
