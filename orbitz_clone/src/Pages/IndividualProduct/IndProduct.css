@@ -52,3 +52,62 @@
     padding: 10px;
     grid-template-columns: repeat(3,1fr);
 }
+
+#HotelParent{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	gap:16px;
+	background-color: #f4f2f2;
+}
+#HotelCard>div{
+	padding:10px
+}
+
+#HotelCard{
+	border: 1px solid #bcbbbc;
+	border-radius: 3px;
+}
+
+#HotelCard img{
+	width: 100%;
+	border-radius: 3px 3px 0px 0px;
+	margin-top: -0.5px;
+	aspect-ratio: 16/8;
+}
+
+input[type="date"]{
+	align-items:flex-end;
+}
+
+
+
+#hotelCardFilter>input[type="date"]:first-child:before {
+    content: attr(placeholder) !important;
+    color: rgb(0, 145, 22);
+	display: flex;
+	align-self: flex-start;
+	margin-left: 15%;
+	margin-right: -76px;
+	font-size: 12px;
+  }
+
+  #hotelCardFilter>input[type="date"]:nth-child(2):before {
+    content: attr(placeholder) !important;
+    color: rgb(229, 3, 3);
+	display: flex;
+	align-self: flex-start;
+	margin-left: 9%;
+	margin-right: -85px;
+	font-size: 12px;
+  }
+
+
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
+
+#hotelCardFilter{
+	display: flex;
+	gap:16px
+}
