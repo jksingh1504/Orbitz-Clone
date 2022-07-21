@@ -1,0 +1,74 @@
+span{
+    color: rgb(63, 144, 149);
+}
+input{
+    border: 1px solid black;
+    width: 400px;
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+
+input::placeholder{
+  padding-left: 10px;
+}
+
+
+.errText{
+    color: red;
+    font-size: 12px;
+}
+#signupCont{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+    margin-left: 550px;
+}
+#titleSignup{
+    font-size: 25px;
+    font-weight: bold;
+}
+#signupBtn{
+    width: 400px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: rgb(245, 169, 169);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+#signupForm{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#rememberMe{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+#checkbox{
+    width: 18px;
+    height: 18px;
+}
+#keepMe{
+    font-size: 15px;
+    padding-bottom: 15px;
+}
+#checkboxText{
+    font-size: 12px;
+}
+#agreeText{
+    font-size: 14px;
+    margin-top: 15px;
+}
+#AlreadyAcc{
+    font-size: 15px;
+    text-align: center;
+}
+#forgot{
+    text-align: center;
+}

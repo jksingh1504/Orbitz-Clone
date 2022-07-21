@@ -1,53 +1,59 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Login.css"
+import "./Signup.css"
 
-export const Login = () => {
-    const initialState = { email: "", password: "" };
-    const [formValues, setFormvalues] = useState(initialState);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit,setIsSubmit] = useState(false);
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormvalues({ ...formValues, [name]: value });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      setFormErrors(validate(formValues));
-      setIsSubmit(true);
+export const Signup = () => {
+  const initialState = { email: "", password: "" };
+  const [formValues, setFormvalues] = useState(initialState);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormvalues({ ...formValues, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formValues));
+    setIsSubmit(true);
+  }
+
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      console.log(formValues)
     }
-  
-    useEffect(() => {
-      if(Object.keys(formErrors).length ===0 && isSubmit){
-        console.log(formValues)
-      }
-    });
-  
-    const validate = (values) => {
-      const errors = {};
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-      if(!values.email){
-        errors.email = "Enter an email address"
-      }
-      else if(!regex.test(values.email)){
-        errors.email = "Enter a valid email address"
-      }
-      if(!values.password){
-        errors.password = "Enter a password"
-      }
-      else if(values.password.length < 4){
-        errors.password = "password must be more than 4 charcters"
-      }
-      else if(values.password.length > 10){
-        errors.password = "password cannot exceed more than 10 charcters"
-      }
-      return errors
+  });
+
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (!values.email) {
+      errors.email = "Enter an email address"
     }
-    return (
-      <div id="signupCont">
-      <p id="titleSignup">Sign in</p>
+    else if (!regex.test(values.email)) {
+      errors.email = "Enter a valid email address"
+    }
+    if (!values.password) {
+      errors.password = "Enter a password"
+    }
+    if (!values.firstname) {
+      errors.firstname = "Enter a First Name"
+    }
+    if (!values.lastname) {
+      errors.lastname = "Enter a Last Name"
+    }
+    else if (values.password.length < 4) {
+      errors.password = "password must be more than 4 charcters"
+    }
+    else if (values.password.length > 10) {
+      errors.password = "password cannot exceed more than 10 charcters"
+    }
+    return errors
+  }
+  return (
+    <div id="signupCont">
+      <p id="titleSignup">Create an account</p>
       <form onSubmit={handleSubmit}>
         
         <div id="signupForm">
@@ -57,6 +63,20 @@ export const Login = () => {
             
             onChange={handleChange} />
           <p className="errText">{formErrors.email}</p>
+
+          <input type="text"
+            name="First Name"
+            placeholder="First Name"
+            value={formValues.firstname}
+            onChange={handleChange} />
+          <p className="errText">{formErrors.firstname}</p>
+
+          <input type="text"
+            name="Email address"
+            placeholder="Last Name"
+            value={formValues.lastname}
+            onChange={handleChange} />
+          <p className="errText">{formErrors.lastname}</p>
 
           <input type="password"
             name="password"
@@ -76,17 +96,16 @@ export const Login = () => {
         </div>
        <div>
        <p id="agreeText"> By creating an account, I agree to the Orbitz <span><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
-        <button id="signupBtn">Log in</button>
+        <button id="signupBtn">Continue</button>
        </div>
       </form>
-      <div id="forgot"><span><Link to="/">Forgot password</Link></span></div>
-      <div id="AlreadyAcc"><p>Don't have an account ?<span><Link to="/login">Create one</Link></span></p></div>
+      <div id="AlreadyAcc"><p>Already have an account? <span><Link to="/login">Sign in</Link></span></p></div>
       <div>
         <div></div>
         <div></div>
       </div>
     </div>
-    );
+  );
 }
 
 
