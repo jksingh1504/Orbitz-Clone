@@ -16,7 +16,7 @@ import {Things_to_do} from "./Search_tabs/Things_to_do"
 export const First = () => {
   return (
     <div className={styles.home}>
-      <br /><br /><br /><br />
+      <br /><br /><br />
       <Box className={styles.containerSearchBox}>
         <Tabs>
           <TabList style={{ justifyContent: "center" }}>
