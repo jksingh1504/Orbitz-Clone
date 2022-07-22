@@ -51,14 +51,14 @@ export const Login = () => {
       <form onSubmit={handleSubmit}>
         
         <div id="signupForm">
-          <input type="text"
+          <input className="inputLogin" type="text"
             name="Email address"
             placeholder="Email Address"
             
             onChange={handleChange} />
           <p className="errText">{formErrors.email}</p>
 
-          <input type="password"
+          <input className="inputLogin" type="password"
             name="password"
             placeholder="Password"
             value={formValues.password}
@@ -75,12 +75,12 @@ export const Login = () => {
           Do not select this on shared devices.</p>
         </div>
        <div>
-       <p id="agreeText"> By creating an account, I agree to the Orbitz <span><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
+       <p id="agreeText"> By creating an account, I agree to the Orbitz <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span className="spanLink"><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
         <button id="signupBtn">Log in</button>
        </div>
       </form>
-      <div id="forgot"><span><Link to="/">Forgot password</Link></span></div>
-      <div id="AlreadyAcc"><p>Don't have an account ?<span><Link to="/login">Create one</Link></span></p></div>
+      <div id="forgot"><span className="spanLink"><Link to="/">Forgot password</Link></span></div>
+      <div id="AlreadyAcc"><p>Don't have an account ?<span className="spanLink"><Link to="/login">Create one</Link></span></p></div>
       <div>
         <div></div>
         <div></div>
@@ -88,32 +88,3 @@ export const Login = () => {
     </div>
     );
 }
-
-
-// <form onSubmit={handleSubmit}>
-//           <h1>Sign in</h1>
-//           <div></div>
-//           <div>
-//             <div>
-//               <input
-//                 type="text"
-//                 name="Email address"
-//                 placeholder="Email"
-//                 value={formValues.email}
-//                 onChange={handleChange}
-//               />
-//             </div>
-//             <p>{formErrors.email}</p>
-//             <div>
-//               <input
-//                 type="text"
-//                 name="password"
-//                 placeholder="Password"
-//                 value={formValues.password}
-//                 onChange={handleChange}
-//               />
-//             </div>
-//             <p>{formErrors.password}</p>
-//             <button>Submit</button>
-//           </div>
-//         </form>
