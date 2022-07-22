@@ -1,11 +1,11 @@
-export const getLocalData = (key) => {
+export const loadData = (key) => {
     if(key){
         const data = localStorage.getItem(key)
         return data;
     }
 }
 
-export const saveLocalData = (key,value) => {
+export const saveData = (key,value) => {
     if(key && value){
         localStorage.setItem(key,value);
     }
