@@ -5,8 +5,8 @@ import MainRoutes from './Components/MainRoutes';
 function App() {
   return (
     <>
-    {/* <MainRoutes/> */}
-  <First/>
+    <MainRoutes/>
+  {/* <First/> */}
     
     </>
   );

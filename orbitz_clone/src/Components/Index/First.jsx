@@ -12,7 +12,7 @@ import { Curises } from "./Curises";
 export const First = () => {
   return (
     <div className={styles.home}>
-      <br /><br /><br /><br />
+      <br /><br /><br />
       <Box className={styles.containerSearchBox}>
         <Tabs>
           <TabList style={{ justifyContent: "center" }}>
