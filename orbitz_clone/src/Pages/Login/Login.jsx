@@ -6,8 +6,8 @@ import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionType";
 import "./Login.css"
 
 export const Login = () => {
-    const initialState = { email: "", password: "" };
-    const [formValues, setFormvalues] = useState(initialState);
+    // const initialState = { email: "", password: "" };
+    // const [formValues, setFormvalues] = useState(initialState);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit,setIsSubmit] = useState(false);
     const [user, setUser] = useState({});
@@ -33,23 +33,26 @@ export const Login = () => {
       if (res === LOGIN_SUCCESS) {
         navigate("/", { replace: true });
       }
+      else{
+        alert("Wrong")
+      }
     });
   };
 
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormvalues({ ...formValues, [name]: value });
-    };
+    // const handleChange = (e) => {
+    //   const { name, value } = e.target;
+    //   setFormvalues({ ...formValues, [name]: value });
+    // };
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      setFormErrors(validate(formValues));
+      setFormErrors(validate(user));
       setIsSubmit(true);
     }
   
     useEffect(() => {
       if(Object.keys(formErrors).length ===0 && isSubmit){
-        console.log(formValues)
+        console.log(user)
       }
     });
   
@@ -82,15 +85,14 @@ export const Login = () => {
           <input className="inputLogin" type="text"
             name="Email address"
             placeholder="Email Address"
-            
             onChange={handlelogin} />
-          <p className="errText">{formErrors.email}</p>
+          {/* <p className="errText">{formErrors.email}</p> */}
 
           <input className="inputLogin" type="password"
             name="password"
             placeholder="Password"
             onChange={handlelogin} />
-          <p className="errText">{formErrors.password}</p>
+          {/* <p className="errText">{formErrors.password}</p> */}
         </div>
         <br />
         <div id="rememberMe">

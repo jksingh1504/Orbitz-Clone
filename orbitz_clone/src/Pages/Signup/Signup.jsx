@@ -10,7 +10,7 @@ export const Signup = () => {
   const [formValues, setFormvalues] = useState(initialState);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   const [newUser, setNewUser] = useState({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,20 +19,21 @@ export const Signup = () => {
 
   useEffect(() => {
     if (isAuth) {
-    
       navigate("/");
     }
   }, [isAuth, navigate]);
 
   const handlePost = (e) => {
     const { name, value } = e.target;
-
     setNewUser({ ...newUser, [name]: value });
   };
   const handleRegistation = () => {
     dispatch(getRegister(newUser)).then((res) => {
       if (res === GET_USER_SUCCESS) {
         navigate("/login", { replace: true });
+      }
+      else{
+        alert("Wrong cred")
       }
     });
   };
@@ -81,38 +82,39 @@ export const Signup = () => {
     }
     return errors
   }
+
   return (
     <div id="signupCont">
       <p id="titleSignup">Create an account</p>
       <form onSubmit={handleSubmit}>
         
         <div id="signupForm">
-          <input className="inputSignup" type="text"
+          <input className="inputSignup" type={isAuth.value}
             name="Email address"
             placeholder="Email Address"
             onChange={handlePost} />
-          <p className="errText">{formErrors.email}</p>
+          {/* <p className="errText">{formErrors.email}</p> */}
 
           <input className="inputSignup" type="text"
             name="First Name"
             placeholder="First Name"
             value={newUser.firstname}
             onChange={handlePost} />
-          <p className="errText">{formErrors.firstname}</p>
+          {/* <p className="errText">{formErrors.firstname}</p> */}
 
           <input className="inputSignup" type="text"
             name="Email address"
             placeholder="Last Name"
             value={newUser.lastname}
             onChange={handlePost} />
-          <p className="errText">{formErrors.lastname}</p>
+          {/* <p className="errText">{formErrors.lastname}</p> */}
 
           <input className="inputSignup" type="password"
             name="password"
             placeholder="Password"
             value={newUser.password}
             onChange={handlePost} />
-          <p className="errText">{formErrors.password}</p>
+          {/* <p className="errText">{formErrors.password}</p> */}
         </div>
         <br />
         <div id="rememberMe">
