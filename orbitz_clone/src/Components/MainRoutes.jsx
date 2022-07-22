@@ -9,7 +9,7 @@ import IndiProduct from "../Pages/IndividualProduct/IndiProduct"
 const MainRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<IndiProduct/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
     </Routes>

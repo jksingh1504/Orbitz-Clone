@@ -4,7 +4,9 @@ import "../IndProduct.css";
 import StarRating from "./StarRating";
 import VipaccessCard from "./VipaccessCard";
 
-const HotelDetails = () => {
+const HotelDetails = ({ Hotel }) => {
+	// console.log(Hotel)
+
 	return (
 		<>
 			<div id="HotelDetails">
@@ -23,16 +25,19 @@ const HotelDetails = () => {
 						VIP Access
 					</div>
 					<Heading fontSize="28" marginTop="10px">
-						Treasure Island - TI Hotel & Casino, a Radisson Hotel
+						{Hotel[0] && Hotel[0].name}
 					</Heading>
-					<StarRating />
+					<StarRating stars={Hotel[0] ? Hotel[0].rating : 4.3} />
 					<br />
-					<Heading size="md">4.1/5 Very good</Heading>
+					<Heading size="md">
+						{Hotel[0] ? Hotel[0].rating : 4.3}/5 Very good
+					</Heading>
 
 					<p
 						style={{ fontSize: "14px", marginTop: "20px", marginBottom: "3px" }}
 					>
-						This Property was rated 4.2 by 5 for its cleanliness
+						This Property was rated {Hotel[0] ? Hotel[0].rating : 4.3} by 5 for
+						its cleanliness and services
 					</p>
 					<p
 						onMouseOver={(e) => {
@@ -75,16 +80,18 @@ const HotelDetails = () => {
 								className="material-icons"
 								style={{ fontSize: "25px", color: "#6b646b" }}
 							>
-								wifi
+								ac_unit
 							</span>
-							<p style={{ paddingLeft: "10px", color: "#6b646b" }}>Y/A</p>
+							<p style={{ paddingLeft: "10px", color: "#6b646b" }}>
+								Air Conditioning
+							</p>
 						</div>
 						<div style={{ display: "flex" }}>
 							<span
 								className="material-icons"
 								style={{ fontSize: "25px", color: "#6b646b" }}
 							>
-								restaurant_menu
+								wifi
 							</span>
 							<p style={{ paddingLeft: "10px", color: "#6b646b" }}>
 								Free Wi-Fi
@@ -95,7 +102,7 @@ const HotelDetails = () => {
 								className="material-icons"
 								style={{ fontSize: "25px", color: "#6b646b" }}
 							>
-								ac_unit
+								spa
 							</span>
 							<p style={{ paddingLeft: "10px", color: "#6b646b" }}>Spa</p>
 						</div>
@@ -115,7 +122,7 @@ const HotelDetails = () => {
 								className="material-icons"
 								style={{ fontSize: "25px", color: "#6b646b" }}
 							>
-								spa
+								restaurant_menu
 							</span>
 							<p style={{ paddingLeft: "10px", color: "#6b646b" }}>
 								Restaurant
@@ -150,9 +157,7 @@ const HotelDetails = () => {
 							width="95%"
 							style={{ borderRadius: "10px" }}
 						/>
-						<p style={{ color: "#6b646b" }}>
-							3300 Las Vegas Blvd S, Las Vegas, NV, 89109
-						</p>
+						<p style={{ color: "#6b646b" }}>{Hotel[0] && Hotel[0].address}</p>
 						<p
 							onMouseOver={(e) => {
 								e.target.style.textDecoration = "underline";
@@ -172,10 +177,16 @@ const HotelDetails = () => {
 						<Heading size="md">What's in the area</Heading>
 					</div>
 
-					<div style={{ display: "flex", alignItems: "center",margin:"20px 0px 7px" }}>
+					<div
+						style={{
+							display: "flex",
+							alignItems: "center",
+							margin: "20px 0px 7px",
+						}}
+					>
 						<span
 							className="material-icons"
-							style={{ fontSize: "22px", color: "#6b646b"}}
+							style={{ fontSize: "22px", color: "#6b646b" }}
 						>
 							location_on
 						</span>
@@ -191,10 +202,16 @@ const HotelDetails = () => {
 							<div>A 4-minute walk away</div>
 						</div>
 					</div>
-                    <div style={{ display: "flex", alignItems: "center",marginBottom:"8px" }}>
+					<div
+						style={{
+							display: "flex",
+							alignItems: "center",
+							marginBottom: "8px",
+						}}
+					>
 						<span
 							className="material-icons"
-							style={{ fontSize: "22px", color: "#6b646b"}}
+							style={{ fontSize: "22px", color: "#6b646b" }}
 						>
 							location_on
 						</span>
@@ -210,10 +227,10 @@ const HotelDetails = () => {
 							<div>A 4-minute walk away</div>
 						</div>
 					</div>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+					<div style={{ display: "flex", alignItems: "center" }}>
 						<span
 							className="material-icons"
-							style={{ fontSize: "22px", color: "#6b646b"}}
+							style={{ fontSize: "22px", color: "#6b646b" }}
 						>
 							location_on
 						</span>

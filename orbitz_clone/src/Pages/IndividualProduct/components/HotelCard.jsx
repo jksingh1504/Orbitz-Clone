@@ -1,28 +1,30 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
-import React from "react";
 import "../IndProduct.css";
 
-const HotelCard = () => {
+
+const HotelCard = ({Hotel}) => {
+	// console.log(Hotel)
+
 	return (
 		<div id="HotelCard">
 			<img
-				src="https://images.trvl-media.com/hotels/1000000/200000/198300/198225/a2090e09.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium"
+				src={Hotel[0] && Hotel[0].images[0].url}
 				alt="room img1"
 			/>
 			<div>
-				<Heading size="sm">Room, 1 King Bed</Heading>
+				<Heading size="sm">Room, {Hotel[0] && Hotel[0].price>2000?2:1} King Bed</Heading>
 				<br />
 				<Flex h="7" color="#6b646b" fontSize="14px" alignItems="center">
 					<span style={{fontSize:"22px" }} className="material-icons">square_foot</span>
-					<p style={{ paddingLeft: "10px" }}>460 sq ft</p>
+					<p style={{ paddingLeft: "10px" }}>{Hotel[0] && Math.floor(Hotel[0].price/5)} sq ft</p>
 				</Flex>
 				<Flex h="7" color="#6b646b" fontSize="14px" alignItems="center">
 					<span style={{fontSize:"22px" }} className="material-icons">group</span>
-					<p style={{ paddingLeft: "10px" }}>Sleeps 2</p>
+					<p style={{ paddingLeft: "10px" }}>Sleeps {Hotel[0] && Hotel[0].price>2000?4:2}</p>
 				</Flex>
 				<Flex h="7" color="#6b646b" fontSize="14px" alignItems="center">
 					<span style={{fontSize:"22px" }} className="material-icons">hotel</span>
-					<p style={{ paddingLeft: "10px" }}>1 King Bed</p>
+					<p style={{ paddingLeft: "10px" }}>{Hotel[0] && Hotel[0].price>2000?2:1} King Bed</p>
 				</Flex>
 				<Flex h="7" color="#6b646b" fontSize="14px" alignItems="center">
 					<span style={{fontSize:"22px" }} className="material-icons">wifi</span>
@@ -37,7 +39,7 @@ const HotelCard = () => {
 					<p style={{ paddingLeft: "10px" }}>Reserve now, pay deposit</p>
 				</Flex>
 				<Flex h="6" color="green" marginTop="10px">
-					<p>Fully Refundable</p>
+					<p>{Hotel[0] && Hotel[0].paymentType}</p>
 					<span className="material-icons">info_outline</span>
 				</Flex>
 				<p style={{ fontSize: "12px", color: "#6b646b" }}>Before Tue, Jul 26</p>
@@ -75,14 +77,14 @@ const HotelCard = () => {
 					30% off
 				</div>
 				<Flex h="10" alignItems="center">
-					<Heading size="lg">$196 </Heading>
-					<s style={{ padding: "0px 10px" }}>$280</s>
+					<Heading size="lg">${Hotel[0] && Hotel[0].price}</Heading>
+					<s style={{ padding: "0px 10px" }}>${Hotel[0] && Hotel[0].price*1.3}</s>
 					<span className="material-icons" style={{ fontSize: "20px" }}>
 						info_outline
 					</span>
 				</Flex>
 				<p style={{ fontSize: "12px", color: "#6b646b", marginBottom: "16px" }}>
-					$547 total
+					${Hotel[0] && Hotel[0].price*1.3-Hotel[0].price} total savings
 				</p>
 				<Flex alignItems="center" justifyContent="space-between">
 					<p
@@ -109,6 +111,7 @@ const HotelCard = () => {
 						marginBottom="3px"
 						borderRadius="3px"
 						color="white"
+						colorScheme="pink"
 					>
 						Reserve
 					</Button>

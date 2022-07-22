@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 
-const StarRating = ({ stars = 4.1 }) => {
+const StarRating = ({ stars}) => {
 	const remainder = stars % 1;
+	// console.log(stars)
 	const Rating = useRef(new Array(Math.floor(stars)).fill(1));
 	// console.log(Rating);
 
