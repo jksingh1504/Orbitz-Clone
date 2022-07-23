@@ -3,14 +3,7 @@ import MainRoutes from './Components/MainRoutes';
 function App() {
   return (
     <>
-
-
     <MainRoutes/>
-
-   
-
-      <MainRoutes/>
-
     </>
   );
 }
