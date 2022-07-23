@@ -6,8 +6,8 @@ import Home from './Pages/Home';
 function App() {
   return (
     <>
-    {/* <MainRoutes/> */}
-  <LandingPage/>
+    <MainRoutes/>
+  {/* <LandingPage/> */}
     
     </>
   );
