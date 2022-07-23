@@ -4,6 +4,7 @@ import { Secound } from "./Secound";
 import { Featuredoffers } from "./Featuredoffers";
 import Options from "./Options";
 import { Navbar } from "../Navbar/Navbar";
+import Footer from "../Footer/Footer" 
 
 export const LandingPage = () => {
   return (
@@ -13,6 +14,7 @@ export const LandingPage = () => {
       <Secound/>
       <Featuredoffers/>
       <Options/>
+      <Footer/>
     </div>
   );
 };

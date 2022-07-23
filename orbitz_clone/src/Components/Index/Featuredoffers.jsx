@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Featuredoffers = () => {
@@ -104,17 +105,17 @@ export const Featuredoffers = () => {
         </Heading>
         <ImgCont>
           {img.map((i) => (
-            <CardCont>
-              <ImgCardCont>
-                <img src={i.url} alt="" />
-                <Title>
-                  <h2>{i.title}</h2>
-                  <TextCont>
-                    <p>{i.p}</p>
-                  </TextCont>
-                </Title>
-              </ImgCardCont>
-            </CardCont>
+            <Link to="/Hotels"><CardCont>
+            <ImgCardCont>
+              <img src={i.url} alt="" />
+              <Title>
+                <h2>{i.title}</h2>
+                <TextCont>
+                  <p>{i.p}</p>
+                </TextCont>
+              </Title>
+            </ImgCardCont>
+          </CardCont></Link>
           ))}
         </ImgCont>
       </Cont>
