@@ -1,0 +1,28 @@
+#Navbar{
+    display: flex;
+    height: 70px;
+    background-color: #012f64;
+    justify-content: space-around;
+}
+
+#Navbar>div{
+    display: flex;
+    align-items: center;
+}
+
+
+#Navbar>div>div:hover{
+    cursor: pointer;
+}
+
+#Navbar h4{
+    font-weight: 600;
+    color: white;
+    padding: 0px 20px;
+}
+
+
+#SiteLogo{
+    height: 100%;
+    width:160px
+}
