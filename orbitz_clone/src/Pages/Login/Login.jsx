@@ -36,10 +36,10 @@ export const Login = () => {
     });
   };
 
-    const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormvalues({ ...formValues, [name]: value });
-    };
+    // const handleChange = (e) => {
+    //   const { name, value } = e.target;
+    //   setFormvalues({ ...formValues, [name]: value });
+    // };
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -84,13 +84,11 @@ export const Login = () => {
             placeholder="Email Address"
             
             onChange={handlelogin} />
-          <p className="errText">{formErrors.email}</p>
 
           <input className="inputLogin" type="password"
             name="password"
             placeholder="Password"
             onChange={handlelogin} />
-          <p className="errText">{formErrors.password}</p>
         </div>
         <br />
         <div id="rememberMe">
