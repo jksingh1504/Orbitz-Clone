@@ -91,28 +91,26 @@ export const Signup = () => {
             name="Email address"
             placeholder="Email Address"
             onChange={handlePost} />
-          {/* <p className="errText">{formErrors.email}</p> */}
+          
 
           <input className="inputSignup" type="text"
             name="First Name"
             placeholder="First Name"
             value={newUser.firstname}
             onChange={handlePost} />
-          {/* <p className="errText">{formErrors.firstname}</p> */}
 
           <input className="inputSignup" type="text"
             name="Email address"
             placeholder="Last Name"
             value={newUser.lastname}
             onChange={handlePost} />
-          {/* <p className="errText">{formErrors.lastname}</p> */}
 
           <input className="inputSignup" type="password"
             name="password"
             placeholder="Password"
             value={newUser.password}
             onChange={handlePost} />
-          {/* <p className="errText">{formErrors.password}</p> */}
+            
         </div>
         <br />
         <div id="rememberMe">
