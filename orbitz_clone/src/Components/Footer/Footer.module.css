@@ -1,0 +1,37 @@
+.containerGrid{
+    display: grid;
+    grid-template-columns:10% 90% ;
+    column-gap: 4%;
+    margin-bottom: 20px;
+}
+  @media only screen and (max-width: 600px) {
+ .containerGrid {
+    grid-template-columns:100%;
+  
+  }
+}
+
+.FooterBox{
+  font-size:7;
+}
+
+.Box{
+  margin: "2% 0";
+}
+.Links{
+  text-decoration: none;
+  color: rgba(12, 140, 224, 0.979);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.comp1{
+    margin: "0.5% 0";
+    font-size: 13
+};
+.comp2{
+    margin: "1% 0";
+    font-size: 13;
+    padding-bottom:"20%";
+};
+
