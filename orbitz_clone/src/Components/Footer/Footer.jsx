@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 
 const Footer1 = [
   {
-    to: "#",
+    to: "/",
     Contact: "About",
   },
   {
-    to: "#",
+    to: "/",
     Contact: "Jobs",
   },
   {
