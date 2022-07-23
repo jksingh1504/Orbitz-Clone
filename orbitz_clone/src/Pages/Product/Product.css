@@ -3,12 +3,14 @@
      border: 1px solid gray;
     display: flex;
      height: 250px;
+   
+    
 
 
 }
 .side{
      margin-left: 60%;
-     margin-top: -20%;
+   
      background-color: rgb(44, 181, 44);
      
      width: 90px;
@@ -21,4 +23,10 @@
 }
 .sortstyle{
       margin-left: 80%;
+}
+.map{
+     width: 200px;
+}
+.filter{
+     
 }

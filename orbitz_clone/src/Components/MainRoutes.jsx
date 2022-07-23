@@ -5,7 +5,6 @@ import { Login } from '../Pages/Login/Login'
 import { Signup } from '../Pages/Signup/Signup'
 import IndiProduct from "../Pages/IndividualProduct/IndiProduct"
 
-import Productpage from '../Pages/Product/Productpage'
 
 import Productpage from "../Pages/Product/Productpage"
 import { LandingPage } from './Index/LandingPage'
@@ -16,7 +15,7 @@ const MainRoutes = () => {
   return (
     <Routes>
 
-        <Route path="/" element={<Home/>}/>
+        <Route path="/productpage" element={<Productpage/>}/>
 
         <Route path="/" element={<LandingPage/>}/>
 

@@ -82,12 +82,29 @@ if(e.target.value==='Fully Refundable'){
 
       </select>
       </div>
-<br />
 
-<label>Fully Refundable
-</label>
+
+{/* <div className='map'>
+  <img src='https://maps.googleapis.com/maps/api/staticmap?channel=expedia-HotelInformation&maptype=roadmap&format=jpg&zoom=&size=600x400&markers=icon:https://a.travel-assets.com/shopping-pwa/images/his-preview-marker-orb.png%7C36.12366,-115.171029%7C36.147284,-115.15529%7C36.109447,-115.154007%7C36.11881,-115.17265%7C36.122197,-115.171625%7C36.102865,-115.17352%7C36.133037,-115.164702%7C36.117608,-115.172808%7C36.09659,-115.173085%7C36.116689,-115.172614&key=AIzaSyCYjQus5kCufOpSj932jFoR_AJiL9yiwOw&signature=YAet34Z4NDxKWEO54cZDeCqHE5s='/>
+</div> */}
+<div className="filter">
+<h1>Filter By</h1>
+<h2>Popular Filters</h2>
+
   <input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
- 
+  <label>Fully Refundable</label><br></br>
+  <input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
+  <label>All inclusive</label><br></br>
+
+  <input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
+<label>Breakfast included</label><br></br>
+<input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
+<label>Hot tub</label><br></br>
+<input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
+<label>Hotel resort</label><br></br>
+<input type="checkbox"  value={'Fully Refundable'} onChange={handleCheckbox}/>
+<label>House</label>
+ </div>
 {/* <label> Fully Refundable</label>
   <input type="checkbox"  value={''}/> */}
  
@@ -95,7 +112,7 @@ if(e.target.value==='Fully Refundable'){
 
 
       {data.map((data, index) => (
-        <div className="row">
+        <div className="row" style={{}}>
 
           <div className="col-sm-1"></div>
           <div className="col-sm-4">
