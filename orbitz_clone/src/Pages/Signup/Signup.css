@@ -1,15 +1,15 @@
-/* span{
+.spanLink{
     color: rgb(63, 144, 149);
 }
-input{
+.inputSignup{
     border: 1px solid black;
     width: 400px;
     height: 50px;
-    padding-left: 50px;
+    padding-left: 30px;
     border-radius: 2px;
 }
 
-input::placeholder{
+/* input::placeholder{
   padding-left: 10px;
 } */
 
