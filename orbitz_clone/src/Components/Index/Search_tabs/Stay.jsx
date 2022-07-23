@@ -63,7 +63,7 @@ export const Stay = () => {
 				<br />
 				<div style={{ display: "flex", justifyContent: "center" }}>
 					<Button colorScheme="red" variant="solid">
-						Submit
+						To Find
 					</Button>
 				</div>
 			</div>
