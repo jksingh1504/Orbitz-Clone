@@ -1,19 +1,13 @@
-/* span{
+.spanLink{
     color: rgb(63, 144, 149);
 }
-input{
+.inputLogin{
     border: 1px solid black;
     width: 400px;
     height: 50px;
-    padding-left: 10px;
+    padding-left: 30px;
     border-radius: 2px;
 }
-
-input::placeholder{
-  padding-left: 10px;
-} */
-
-
 .errText{
     color: red;
     font-size: 12px;
@@ -24,7 +18,7 @@ input::placeholder{
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
-    margin-left: 550px;
+    margin-left: auto;
 }
 #titleSignup{
     font-size: 25px;
