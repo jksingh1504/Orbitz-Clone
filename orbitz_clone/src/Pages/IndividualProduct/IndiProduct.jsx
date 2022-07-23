@@ -21,7 +21,7 @@ const IndiProduct = () => {
 	}, [setHotel]);
 
 	const Rooms = () => {
-		window.scrollTo({ top: 1200, behavior: "smooth" });
+		window.scrollTo({ top: 1160, behavior: "smooth" });
 	};
 
 	const services = () => {
@@ -139,6 +139,7 @@ const IndiProduct = () => {
 							borderRadius="3px"
 							color="white"
 							colorScheme="pink"
+							onClick={Rooms}
 						>
 							Book a room
 						</Button>
