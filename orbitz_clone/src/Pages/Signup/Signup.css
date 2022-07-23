@@ -34,12 +34,17 @@
     width: 400px;
     height: 50px;
     border: 1px solid black;
-    background-color: rgb(245, 169, 169);
+    background-color: rgb(224, 53, 53);
     border: none;
     color: white;
     border-radius: 5px;
     margin-top: 20px;
 }
+
+#signupBtn:hover{
+    background-color: rgb(236, 81, 81);
+}
+
 #signupForm{
     display: flex;
     flex-direction: column;
