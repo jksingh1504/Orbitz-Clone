@@ -18,7 +18,7 @@
     flex-direction: column;
     gap: 15px;
     margin-top: 20px;
-    margin-left: 550px;
+    margin-left: auto;
 }
 #titleSignup{
     font-size: 25px;
