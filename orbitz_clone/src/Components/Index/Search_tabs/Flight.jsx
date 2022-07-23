@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Checkbox, flexbox, Input, Stack } from "@chakra-ui/react";
 import "./stay.css";
 import { Flex, Box } from "@chakra-ui/react";
+import { Link } from 'react-router-dom';
 
 export const Flight = () => {
   return (
@@ -12,7 +13,7 @@ export const Flight = () => {
 					<Input
 						borderRadius="2px"
 						outline="1px solid rgb(82, 81, 81)"
-						placeholder="medium size"
+						placeholder="Enter your destination"
 						size="lg"
 						width="500px"
 					/>
@@ -62,9 +63,11 @@ export const Flight = () => {
 				</Stack>
 				<br />
 				<div style={{ display: "flex", justifyContent: "center" }}>
-					<Button colorScheme="red" variant="solid">
-						Submit
-					</Button>
+					<Link to="/Hotels">
+						<Button colorScheme="red" variant="solid">
+							To Find
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</>
