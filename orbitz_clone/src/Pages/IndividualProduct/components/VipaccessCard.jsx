@@ -31,7 +31,7 @@ const VipaccessCard = () => {
 						and are carefully selected for their quality.
 					</p>
 				</div>
-				<div style={{ display: "flex", marginLeft: "20px" }}>
+				<div style={{ display: "flex", marginLeft: "10px" }}>
 					<span
 						className="material-icons"
 						style={{ fontSize: "25px", color: "#6b646b" }}
