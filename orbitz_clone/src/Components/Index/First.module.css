@@ -53,4 +53,34 @@
     box-shadow:rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px ;
 
   }
-  
+  .eicon{
+
+    width: "20px";
+    fill: "#465280";
+  }
+  .importbox{
+
+    /* border: 1px solid red; */
+    padding-top: 80px;
+    font-weight: bold;
+    padding-left: 20px;
+    filter: brightness(1);
+    
+    
+  }
+  .importbox >p{
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .importbox >h1{
+    color: white;
+  }
+
+  .hed{
+    font-size: 25px;
+  }
+  .darkimg{
+    
+      filter: brightness(70%);
+  }

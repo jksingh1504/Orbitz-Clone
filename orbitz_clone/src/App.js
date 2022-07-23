@@ -1,13 +1,12 @@
 import './App.css';
-import { First } from './Components/Index/First';
+import { LandingPage } from './Components/Index/LandingPage';
 import MainRoutes from './Components/MainRoutes';
+import Home from './Pages/Home';
 
 function App() {
   return (
     <>
     <MainRoutes/>
-  {/* <First/> */}
-    
     </>
   );
 }

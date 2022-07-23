@@ -1,10 +1,10 @@
 import React from "react";
-import { Homepage } from "../Components/HomePage/Homepage";
+import { LandingPage } from "../Components/Index/LandingPage";
 
 const Home = () => {
 	return (
 		<div>
-			<Homepage />
+   v      <LandingPage/>
 		</div>
 	);
 };
