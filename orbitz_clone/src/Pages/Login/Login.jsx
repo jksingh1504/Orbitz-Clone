@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getLogin } from "../../Redux/AuthReducer/action";
 import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionType";
 import "./Login.css"
+import {useToast} from "@chakra-ui/react"
 
 export const Login = () => {
     const initialState = { email: "", password: "" };
@@ -14,6 +15,9 @@ export const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isAuth = useSelector((state) => state.authReducer.isAuth);
+  const toast=useToast()
+
+
 
   useEffect(() => {
     if (isAuth) {
@@ -31,6 +35,14 @@ export const Login = () => {
   const loginHandle = () => {
     dispatch(getLogin(user)).then((res) => {
       if (res === LOGIN_SUCCESS) {
+        toast({
+          title: 'You have been logged in successfully',
+          description: "",
+          status: 'success',
+          position:"top",
+          duration: 3000,
+          isClosable: true,
+          })
         navigate("/", { replace: true });
       }
     });

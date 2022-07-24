@@ -6,6 +6,7 @@ import IndiProduct from "../Pages/IndividualProduct/IndiProduct";
 
 import Productpage from "../Pages/Product/Productpage";
 import { LandingPage } from "./Index/LandingPage";
+import { PaymentPage } from "../Pages/Payment/PaymentPage";
 
 const MainRoutes = () => {
 	return (
@@ -15,6 +16,7 @@ const MainRoutes = () => {
 			<Route path="/login" element={<Login />} />
 			<Route path="/signup" element={<Signup />} />
 			<Route path="/Hotels/:id" element={<IndiProduct />} />
+			<Route path="/payment" element={<PaymentPage/>}/>
 		</Routes>
 	);
 };

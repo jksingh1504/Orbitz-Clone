@@ -128,7 +128,7 @@ export const Featuredoffers = () => {
 
 
    <Box className={styles.firstcss} bgImage={seaimg}   
-          bgRepeat="no-repeat" >
+       bgRepeat="no-repeat" >
 
    </Box>
    <Box className={styles.seccss} bgImage={seaimgs}   bgPosition="center" 
