@@ -4,6 +4,7 @@ import "./Signup.css"
 import { useDispatch, useSelector } from "react-redux"
 import { getRegister } from "../../Redux/AuthReducer/action";
 import { GET_USER_SUCCESS } from "../../Redux/AuthReducer/actionType";
+import { useToast } from "@chakra-ui/react";
 
 export const Signup = () => {
   // const initialState = { email: "", password: "" };
@@ -14,12 +15,13 @@ export const Signup = () => {
   const [newUser, setNewUser] = useState({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const toast=useToast()
   const isAuth = useSelector((state) => state.authReducer.isAuth);
 
 
   useEffect(() => {
     if (isAuth) {
-    
+      
       navigate("/");
     }
   }, [isAuth, navigate]);
@@ -32,6 +34,14 @@ export const Signup = () => {
   const handleRegistation = () => {
     dispatch(getRegister(newUser)).then((res) => {
       if (res === GET_USER_SUCCESS) {
+        toast({
+          title: 'Signup successful',
+          description: "",
+          status: 'success',
+          position:"top",
+          duration: 3000,
+          isClosable: true,
+          })
         navigate("/login", { replace: true });
       }
     });

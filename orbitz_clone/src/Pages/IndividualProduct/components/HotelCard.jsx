@@ -1,9 +1,18 @@
 import { Button, Flex, Heading } from "@chakra-ui/react";
 import "../IndProduct.css";
+import {useNavigate} from "react-router-dom"
 
 
 const HotelCard = ({Hotel}) => {
 	// console.log(Hotel)
+	const navigate=useNavigate()
+
+
+	const ToPayment=()=>{
+		navigate("/payment")
+	}
+
+
 
 	return (
 		<div id="HotelCard">
@@ -112,6 +121,7 @@ const HotelCard = ({Hotel}) => {
 						borderRadius="3px"
 						color="white"
 						colorScheme="pink"
+						onClick={ToPayment}
 					>
 						Reserve
 					</Button>
