@@ -28,7 +28,7 @@ Netlify link:- https://orbitz-clone-jyotikamal.netlify.app
 3.	JavaScript - ES6, local Storage, DE-bouncing, Fetch API, Import / Export, 
                     Set Interval / Set Timeout.
 4.	API - for signIn and signUp functionality we used https://github.com/masai-school/api-mocker/wiki/Authentication-API
-5.	      for search functionality we used https://orbitz-heroku-data.herokuapp.com/hotels
+5.	for search functionality we used https://orbitz-heroku-data.herokuapp.com/hotels
 ## Roles and Responsibilities:
 ###### • GitHub is managed by Mr. Jyoti Kamal Singh (Team-Lead).
 ###### • Readme.md file created by Mr. Jyoti Kamal Singh.
