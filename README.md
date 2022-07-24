@@ -15,12 +15,11 @@ Netlify link:- https://orbitz-clone-jyotikamal.netlify.app
 5.	Mr. Ankit Sangwan .
 
 ## Pages and Features:
-###### Home Page: It contains Navigation bar with different categories and search tab where customer can search for the required Hotel or Destination place. Also footer which provides some information about the company and links to social media handles. Also it shows images of some latest offers.
-###### Sing-in/Sign-out : From this page user can create his/her own account, without signing in user can not proceed for payments or bookings.
-###### Hotel Search result : This page fetches data from an api based on your search from home page search bar and shows it on the UI.
-###### Sorting : Sorting functionality has been provided based on the price and customer ratings.
-###### Hotel Details page : This page contains the details of the Hotel which you have choosen from the search result page. From this page user can check Hotel name, address, facilities, rooms, customer-reviews etc. and also can book one or many rooms based on their requirements.
-###### Checkout and payment page : From this page user can finally book their hotel rooms and make payments via credit cards etc.
+###### • Home Page: It contains Navigation bar with different categories and search tab where customer can search for the required Hotel or Destination place. Also footer which provides some information about the company and links to social media handles. Also it shows images of some latest offers.
+###### • Sing-in/Sign-out : From this page user can create his/her own account, without signing in user can not proceed for payments or bookings.
+###### • Hotel Search result : This page fetches data from an api based on your search from home page search bar and shows it on the UI.
+###### • Sorting : Sorting functionality has been provided based on the price and customer ratings.
+###### • Hotel Details page : This page contains the details of the Hotel which you have choosen from the search result page. From this page user can check Hotel name, ###### • Checkout and payment page : From this page user can finally book their hotel rooms and make payments via credit cards etc.
 
 ## Tech Stack:
 1.	HTML
