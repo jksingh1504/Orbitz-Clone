@@ -4,15 +4,17 @@ import { Secound } from "./Secound";
 import { Featuredoffers } from "./Featuredoffers";
 import Options from "./Options";
 import { Navbar } from "../Navbar/Navbar";
+import Reward from "./Reward";
 
 export const LandingPage = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <First />
-      <Secound/>
-      <Featuredoffers/>
-      <Options/>
+      <Secound />
+      <Featuredoffers />
+      <Options />
+      <Reward />
     </div>
   );
 };
