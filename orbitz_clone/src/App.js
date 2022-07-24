@@ -1,14 +1,9 @@
-import './App.css';
-import { LandingPage } from './Components/Index/LandingPage';
-import MainRoutes from './Components/MainRoutes';
-import Home from './Pages/Home';
-
+import "./App.css";
+import MainRoutes from "./Components/MainRoutes";
 function App() {
   return (
     <>
-    {/* <MainRoutes/> */}
-  <LandingPage/>
-    
+    <MainRoutes/>
     </>
   );
 }

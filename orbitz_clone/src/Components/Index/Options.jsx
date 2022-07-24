@@ -112,6 +112,8 @@ export default function Options() {
         </GridItem>
       </Grid>
       <Box h={60} >
+
+      <Box h={60}>
         <Image src={secimag} style={{ margin: "auto", paddingTop: "55px" }} />
       </Box>
     </MainCont>

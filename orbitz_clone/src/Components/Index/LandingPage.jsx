@@ -5,6 +5,8 @@ import { Featuredoffers } from "./Featuredoffers";
 import Options from "./Options";
 import { Navbar } from "../Navbar/Navbar";
 import Reward from "./Reward";
+import Footer from "../Footer/Footer" 
+
 
 export const LandingPage = () => {
   return (
@@ -15,6 +17,7 @@ export const LandingPage = () => {
       <Featuredoffers />
       <Options />
       <Reward />
+      <Footer/>
     </div>
   );
 };
