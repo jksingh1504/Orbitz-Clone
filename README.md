@@ -8,7 +8,7 @@ This project is built by us (5 team members) during construct week of unit 5 at 
 Netlify link:- https://orbitz-clone-jyotikamal.netlify.app
 
 ## Team Members.
-1.	Mr. Jyoti Kamal Singh.
+1.	Mr. Jyoti Kamal Singh (Team Lead).
 2.	Mr. Roshan Gajanan Arikar
 3.	Ms. Chhavi Srivastava.
 4.	Mr. Sachin Kumar Keshri.
