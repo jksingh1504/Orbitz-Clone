@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import styles from "./PaymentPage.module.css";
-import StripeCheckout from "react-stripe-checkout";
+// import StripeCheckout from "react-stripe-checkout";
 import "react-toastify/dist/ReactToastify.css";
-import LockIcon from "@material-ui/icons/Lock";
-import CheckCircleIcon from "@material-ui/icons/CheckCircle";
-import CreditCardIcon from "@material-ui/icons/CreditCard";
-import { Divider, Typography } from "@material-ui/core";
+// import LockIcon from "@material-ui/icons/Lock";
+// import CheckCircleIcon from "@material-ui/icons/CheckCircle";
+// import CreditCardIcon from "@material-ui/icons/CreditCard";
+// import { Divider, Typography } from "@material-ui/core";
 
 export const PaymentPage=()=> {
   useEffect(() => {
@@ -14,11 +14,11 @@ export const PaymentPage=()=> {
 
   return (
     <div className={styles.mainc}>
-      <Typography variant="h4" className={styles.secure_typ}>
+      {/* <Typography variant="h4" className={styles.secure_typ}> */}
         Secure booking — only takes 2 minutes!
-      </Typography>
+      {/* </Typography> */}
       <div className={styles.orbucksContainer}>
-        <LockIcon />
+        {/* <LockIcon /> */}
         <p className={styles.orbucksInfo}>Sign in to earn ₹299 in Orbucks</p>
       </div>
       <div className={styles.paymentcontainer}>
@@ -57,7 +57,7 @@ export const PaymentPage=()=> {
               </div>
             </div>
           </div>
-          <div className={styles.amount}>
+          {/* <div className={styles.amount}>
             <Typography variant="h4" className={styles.styling_amount}>
               amount Details
             </Typography>
@@ -76,10 +76,10 @@ export const PaymentPage=()=> {
                 <div className={styles.total}>₹1300</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className={styles.proceed}>
+      {/* <div className={styles.proceed}>
         <div className={styles.info}>
           <CreditCardIcon />
           <div className={styles.flex_style}>
@@ -158,7 +158,7 @@ export const PaymentPage=()=> {
             payment.
           </p>
         </div>
-      </div>
+      </div> */}
       <div className={styles.alcent}>
         <p className={styles.blu}>[+] Tell us what you think </p>
         <p>© 2022 orbitz,LLC,An Experdia group Company.All rights reserved</p>

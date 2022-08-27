@@ -86,7 +86,7 @@ const HotelCard = ({Hotel}) => {
 					30% off
 				</div>
 				<Flex h="10" alignItems="center">
-					<Heading size="lg">${Hotel[0] && Hotel[0].price}</Heading>
+					<Heading size="lg">Rs {Hotel[0] && Hotel[0].price}</Heading>
 					<s style={{ padding: "0px 10px" }}>${Hotel[0] && Hotel[0].price*1.3}</s>
 					<span className="material-icons" style={{ fontSize: "20px" }}>
 						info_outline

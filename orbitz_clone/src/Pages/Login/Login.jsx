@@ -1,124 +1,105 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { getLogin } from "../../Redux/AuthReducer/action";
-import { LOGIN_SUCCESS } from "../../Redux/AuthReducer/actionType";
-import "./Login.css"
-import {useToast} from "@chakra-ui/react"
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  Checkbox,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  Link
+} from '@chakra-ui/react';
+import { useState } from 'react';
+import { Link as  RouterLink, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { LOGIN_SUCCESS } from '../../Redux/AuthReducer/actionTypes';
+import { login } from '../../Redux/AuthReducer/action';
 
 export const Login = () => {
-    const initialState = { email: "", password: "" };
-    const [formValues, setFormvalues] = useState(initialState);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit,setIsSubmit] = useState(false);
-    const [user, setUser] = useState({});
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const isAuth = useSelector((state) => state.authReducer.isAuth);
-  const toast=useToast()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-
-
-  useEffect(() => {
-    if (isAuth) {
-      navigate("/", { replace: true });
-    }
-  }, [isAuth, navigate]);
-
-  const handlelogin = (e) => {
-    const { name, value } = e.target;
-    setUser({
-      ...user,
-      [name]: value,
-    });
-  };
-  const loginHandle = () => {
-    dispatch(getLogin(user)).then((res) => {
-      if (res === LOGIN_SUCCESS) {
-        toast({
-          title: 'You have been logged in successfully',
-          description: "",
-          status: 'success',
-          position:"top",
-          duration: 3000,
-          isClosable: true,
+  const loginHandler = () => {
+      if(email && password) {
+          const params = {
+              email,
+              password,
+          }
+          
+          dispatch(login(params)).then((res) => {
+              if(res === LOGIN_SUCCESS){
+                  navigate("/", {replace: true})
+                  console.log(res)
+              }
+          }).catch((e)=>{
+            console.log(e)
           })
-        navigate("/", { replace: true });
       }
-    });
-  };
+  }
 
-    // const handleChange = (e) => {
-    //   const { name, value } = e.target;
-    //   setFormvalues({ ...formValues, [name]: value });
-    // };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      setFormErrors(validate(formValues));
-      setIsSubmit(true);
-    }
-  
-    useEffect(() => {
-      if(Object.keys(formErrors).length ===0 && isSubmit){
-        console.log(formValues)
-      }
-    });
-  
-    const validate = (values) => {
-      const errors = {};
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-      if(!values.email){
-        errors.email = "Enter an email address"
-      }
-      else if(!regex.test(values.email)){
-        errors.email = "Enter a valid email address"
-      }
-      if(!values.password){
-        errors.password = "Enter a password"
-      }
-      else if(values.password.length < 4){
-        errors.password = "password must be more than 4 charcters"
-      }
-      else if(values.password.length > 10){
-        errors.password = "password cannot exceed more than 10 charcters"
-      }
-      return errors
-    }
-    return (
-      <div id="signupCont">
-      <p id="titleSignup">Sign in</p>
-      <form onSubmit={handleSubmit}>
-        
-        <div id="signupForm">
-          <input className="inputLogin" type="text"
-            name="Email address"
-            placeholder="Email Address"
-            
-            onChange={handlelogin} />
-
-          <input className="inputLogin" type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handlelogin} />
-        </div>
-        <br />
-        <div id="rememberMe">
-          <input id="checkbox" type="checkbox" />
-          <p id="keepMe">Keep me signed in</p>
-        </div>
-        <div>
-        <p id="checkboxText">Selecting this checkbox will keep you signed into your account on this device until you sign out.
-          Do not select this on shared devices.</p>
-        </div>
-       <div>
-       <p id="agreeText"> By creating an account, I agree to the Orbitz <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span className="spanLink"><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
-        <button id="signupBtn" onClick={loginHandle}>Log in</button>
-       </div>
-      </form>
-      <div id="forgot"><span className="spanLink"><Link to="/">Forgot password</Link></span></div>
-      <div id="AlreadyAcc"><p>Don't have an account ?<span className="spanLink"><Link to="/login">Create one</Link></span></p></div>
-      
-    </div>
-    );
+  return (
+    <Flex
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+      bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
+        <Stack align={'center'}>
+          <Heading fontSize={'4xl'}>Sign in to your account</Heading>
+         
+        </Stack>
+        <Box
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}>
+          <Stack spacing={4}>
+          <FormControl id="email" isRequired>
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" 
+              value={email} 
+              onChange={(e) =>
+                  setEmail(e.target.value)}/>
+            </FormControl>
+            <FormControl id="password">
+              <FormLabel>Password</FormLabel>
+              <Input type="password"  
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
+            </FormControl>
+            <Stack spacing={10}>
+              <Stack
+                direction={{ base: 'column', sm: 'row' }}
+                align={'start'}
+                justify={'space-between'}>
+                <Checkbox>Remember me</Checkbox>
+                <Link color={'blue.400'}>Forgot password?</Link>
+              </Stack>
+              <Button
+                bg={'red.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'red.500',
+                }}
+                onClick={loginHandler}
+                >
+                Sign in
+              </Button>
+              <Stack pt={6}>
+              <Text align={'center'}>
+                Not user? <RouterLink to="/signup" color={'rgb(121,62,172).400'}>Register Here</RouterLink>
+              </Text>
+            </Stack>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+    </Flex>
+  );
 }
+

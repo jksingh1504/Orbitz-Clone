@@ -1,142 +1,157 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./Signup.css"
-import { useDispatch, useSelector } from "react-redux"
-import { getRegister } from "../../Redux/AuthReducer/action";
-import { GET_USER_SUCCESS } from "../../Redux/AuthReducer/actionType";
-import { useToast } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  HStack,
+  InputRightElement,
+  Stack,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  Link
+} from '@chakra-ui/react';
+import { useReducer, useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { Link as  RouterLink, useNavigate } from 'react-router-dom';
+import { REGISTER_SUCCESS } from "../../Redux/AuthReducer/actionTypes"
+import { register } from '../../Redux/AuthReducer/action';
 
-export const Signup = () => {
-  // const initialState = { email: "", password: "" };
-  // const [formValues, setFormvalues] = useState(initialState);
-  const [formErrors, setFormErrors] = useState({});
-  const [isSubmit, setIsSubmit] = useState(false);
-  // const [showPassword, setShowPassword] = useState(false);
-  const [newUser, setNewUser] = useState({});
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const toast=useToast()
-  const isAuth = useSelector((state) => state.authReducer.isAuth);
+function reducer(state,action) {
+  switch(action.type){
+      case "name": 
+      return {
+          ...state,
+          name: action.payload
+      };
 
-
-  useEffect(() => {
-    if (isAuth) {
-      
-      navigate("/");
-    }
-  }, [isAuth, navigate]);
-
-  const handlePost = (e) => {
-    const { name, value } = e.target;
-
-    setNewUser({ ...newUser, [name]: value });
-  };
-  const handleRegistation = () => {
-    dispatch(getRegister(newUser)).then((res) => {
-      if (res === GET_USER_SUCCESS) {
-        toast({
-          title: 'Signup successful',
-          description: "",
-          status: 'success',
-          position:"top",
-          duration: 3000,
-          isClosable: true,
-          })
-        navigate("/login", { replace: true });
+      case "username": 
+      return {
+          ...state,
+          username: action.payload
       }
-    });
-  };
 
+      case "password": 
+      return {
+          ...state,
+          password: action.payload
+      }
 
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormvalues({ ...formValues, [name]: value });
-  // };
+      case "mobile": 
+      return {
+          ...state,
+          mobile: action.payload
+      }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormErrors(validate(newUser));
-    setIsSubmit(true);
+      case "email": 
+      return {
+          ...state,
+          email: action.payload
+      }
+
+      default: 
+      return state;
+  }
+}
+
+const initialState ={
+  name: "",
+  email: "",
+  password: "",
+  username: "",
+  mobile: "",
+}
+
+export const Signup = () =>  {
+  const [showPassword, setShowPassword] = useState(false);
+  const [state, setter] = useReducer(reducer,initialState)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const signupHandler = () => {
+     dispatch(register(state)).then((r)=> {
+      if(r=== REGISTER_SUCCESS){
+          navigate("/login", { replace: true})
+      }
+     })
   }
 
-  useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(newUser)
-    }
-  });
-
-  const validate = (values) => {
-    const errors = {};
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.email) {
-      errors.email = "Enter an email address"
-    }
-    else if (!regex.test(values.email)) {
-      errors.email = "Enter a valid email address"
-    }
-    if (!values.password) {
-      errors.password = "Enter a password"
-    }
-    if (!values.firstname) {
-      errors.firstname = "Enter a First Name"
-    }
-    if (!values.lastname) {
-      errors.lastname = "Enter a Last Name"
-    }
-    else if (values.password.length < 4) {
-      errors.password = "password must be more than 4 charcters"
-    }
-    else if (values.password.length > 10) {
-      errors.password = "password cannot exceed more than 10 charcters"
-    }
-    return errors
-  }
   return (
-    <div id="signupCont">
-      <p id="titleSignup">Create an account</p>
-      <form onSubmit={handleSubmit}>
-        
-        <div id="signupForm">
-          <input className="inputSignup" type="text"
-            name="Email address"
-            placeholder="Email Address"
-            onChange={handlePost} />
-          
+    <Flex
+      minH={'100vh'}
+      align={'center'}
+      justify={'center'}
+      bg={useColorModeValue('gray.50', 'gray.800')}>
+      <Stack spacing={8} mx={'auto'} width={'800px'} maxW={'lg'} py={12} px={6}>
+        <Stack align={'center'}>
+          <Heading fontSize={'4xl'} textAlign={'center'}>
+            Sign up
+          </Heading>
 
-          <input className="inputSignup" type="text"
-            name="First Name"
-            placeholder="First Name"
-            value={newUser.firstname}
-            onChange={handlePost} />
-
-          <input className="inputSignup" type="text"
-            name="Email address"
-            placeholder="Last Name"
-            value={newUser.lastname}
-            onChange={handlePost} />
-
-          <input className="inputSignup" type="password"
-            name="password"
-            placeholder="Password"
-            value={newUser.password}
-            onChange={handlePost} />
+        </Stack>
+        <Box
+          rounded={'lg'}
+          bg={useColorModeValue('white', 'gray.700')}
+          boxShadow={'lg'}
+          p={8}>
+          <Stack spacing={4}>
+            <FormControl id="Name" isRequired>
+                  <FormLabel>Name</FormLabel>
+                  <Input type="text" value={state.name} 
+                 onChange={(e) =>
+                  setter({ type: "name", payload: e.target.value})}/>
+                </FormControl>
+            <FormControl id="email" isRequired>
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" 
+              value={state.email} 
+              onChange={(e) =>
+                  setter({ type: "email", payload: e.target.value})}/>
+            </FormControl>
             
-        </div>
-        <br />
-        <div id="rememberMe">
-          <input id="checkbox" type="checkbox" />
-          <p id="keepMe">Keep me signed in</p>
-        </div>
-        <div>
-        <p id="checkboxText">Selecting this checkbox will keep you signed into your account on this device until you sign out.
-          Do not select this on shared devices.</p>
-        </div>
-       <div>
-       <p id="agreeText"> By creating an account, I agree to the Orbitz <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-terms">Terms and Conditions</Link></span>, <span className="spanLink"><Link to="https://www.orbitz.com/lp/lg-privacy">Privacy Statement</Link></span> and <span className="spanLink"><Link to="https://www.orbitz.com/rewards/terms">Orbitz Rewards Terms and Conditions.</Link></span></p>
-        <button id="signupBtn" onClick={handleRegistation}>Continue</button>
-       </div>
-      </form>
-      <div id="AlreadyAcc"><p>Already have an account? <span className="spanLink"><Link to="/login">Sign in</Link></span></p></div>
-    </div>
+            <FormControl id="password" isRequired>
+              <FormLabel>Password</FormLabel>
+              <InputGroup>
+                <Input type={showPassword ? 'text' : 'password'}
+                 value={state.password} 
+                 onChange={(e) =>
+                  setter({ type: "password", payload: e.target.value})}/>
+                <InputRightElement h={'full'}>
+                  <Button
+                    variant={'ghost'}
+                    onClick={() =>
+                      setShowPassword((showPassword) => !showPassword)
+                    }>
+                    {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </FormControl>
+            <Stack spacing={10} pt={2}>
+              <Button
+                loadingText="Submitting"
+                size="lg"
+                bg={'red.400'}
+                color={'white'}
+                _hover={{
+                  bg: 'red.500',
+                }}
+                onClick={signupHandler}>
+                Sign up
+              </Button>
+            </Stack>
+            <Stack pt={6}>
+              <Text align={'center'}>
+                Already a user? <RouterLink to="/login" color={'rgb(121,62,172).400'}>Login</RouterLink>
+              </Text>
+            </Stack>
+          </Stack>
+        </Box>
+      </Stack>
+    </Flex>
   );
 }
