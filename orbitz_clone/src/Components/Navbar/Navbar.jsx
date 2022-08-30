@@ -50,7 +50,7 @@ export const Navbar = () => {
 			</div>
 			<div>
 				<div>
-					<h4>Enlgish</h4>
+					<h4>English</h4>
 				</div>
 				<div>
 					<h4>List a property</h4>

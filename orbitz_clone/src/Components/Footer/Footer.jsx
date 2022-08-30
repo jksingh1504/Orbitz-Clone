@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from '@material-ui/core';
+import { Box, Container, Grid } from '@chakra-ui/react';
 import React from 'react';
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
